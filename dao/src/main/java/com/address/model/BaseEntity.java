@@ -23,12 +23,8 @@ public class BaseEntity {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     protected Date createdAt;
 
-    @Column(name = "modified_at")
-    @NotNull
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    protected Date modifiedAt;
-
     public BaseEntity() {
+        // when the object is created its creation date = first modification
         createdAt = new Date();
     }
 
@@ -47,13 +43,4 @@ public class BaseEntity {
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
-
-    public Date getModifiedAt() {
-        return modifiedAt;
-    }
-
-    public void setModifiedAt(Date modifiedAt) {
-        this.modifiedAt = modifiedAt;
-    }
-
 }

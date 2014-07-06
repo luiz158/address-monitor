@@ -1,5 +1,7 @@
 package com.address.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
 
 /**
@@ -9,7 +11,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "change_log")
 @NamedQueries({
-        @NamedQuery(name = ChangeLog.FIND_BY_ADDRESS, query = "select c from ChangeLog c where c.address.id=:addressId")
+        @NamedQuery(name = ChangeLog.FIND_BY_ADDRESS,
+                query = "SELECT c FROM ChangeLog c " +
+                        "WHERE c.address.id=:addressId " +
+                        "ORDER BY c.createdAt")
 })
 public class ChangeLog extends BaseEntity {
 
@@ -24,6 +29,10 @@ public class ChangeLog extends BaseEntity {
      */
     @Column
     protected String user;
+
+    @NotEmpty
+    @Column(unique = true)
+    private String url;
 
     public static String getFindByAddress() {
         return FIND_BY_ADDRESS;
@@ -45,5 +54,20 @@ public class ChangeLog extends BaseEntity {
         this.user = user;
     }
 
+    public String getUrl() {
+        return url;
+    }
 
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    @Override
+    public String toString() {
+        return "ChangeLog{" +
+                ", user='" + user + '\'' +
+                ", url='" + url + '\'' +
+                ", createdAt" + createdAt + '\'' +
+                "}\n";
+    }
 }

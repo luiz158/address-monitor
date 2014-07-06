@@ -25,29 +25,13 @@
     </logger>
 
 
-    <!-- 3rdparty Loggers -->
-    <logger name="org.org.springframework.beans">
-        <level value="info"/>
-    </logger>
-
-    <logger name="org.org.springframework.binding">
-        <level value="debug"/>
-    </logger>
-
-    <logger name="org.org.springframework.web">
-        <level value="debug"/>
-    </logger>
-
-    <logger name="org.org.springframework.webflow">
-        <level value="debug"/>
-    </logger>
-
-    <logger name="org.org.springframework.security">
-        <level value="info"/>
+    <!-- 3rdparty Loggers - set them on debug to see all that is needed-->
+    <logger name="org.springframework">
+        <level value="off"/>
     </logger>
 
     <logger name="org.hibernate">
-        <level value="debug"/>
+        <level value="off"/>
     </logger>
 
     <!-- Root Logger -->

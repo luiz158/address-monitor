@@ -14,12 +14,14 @@ import java.util.Set;
 @Table
 @NamedQueries({
         @NamedQuery(name = Address.FIND_BY_ID, query = "select a from Address a where a.id=:id"),
+        @NamedQuery(name = Address.FIND_ALL, query = "select a from Address a order by a.createdAt desc"),
         @NamedQuery(name = Address.FIND_BY_URL, query = "select a from Address a where a.url = :url"),
 })
 public class Address extends BaseEntity {
 
     public static final String FIND_BY_ID = "findById";
     public static final String FIND_BY_URL = "findByUrl";
+    public static final String FIND_ALL = "findAll";
 
     @NotEmpty
     @Column(unique = true)
@@ -59,5 +61,14 @@ public class Address extends BaseEntity {
     public boolean addChangeLog(ChangeLog changeLog) {
         changeLog.setAddress(this);
         return this.logEntries.add(changeLog);
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "url='" + url + '\'' +
+                ", company='" + company + '\'' +
+                ", logEntries=" + logEntries +
+                '}';
     }
 }
