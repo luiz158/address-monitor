@@ -14,6 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 @ContextConfiguration(locations = {"classpath:spring/app-dao-config.xml", "classpath:spring/test-db-config.xml"})
 @Transactional
 @TransactionConfiguration(defaultRollback = true)
-public class AbstractRepositoryDaoTest {
+public class AbstractRepositoryDaoTestCase {
 
 }

@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
  * User: jules
  * Date: 7/6/14
  */
-public class AddressRepoTest extends AbstractRepositoryDaoTest {
+public class AddressRepoTest extends AbstractRepositoryDaoTestCase {
 
     @Autowired @Qualifier("addressRepo")
     private AddressRepository addressRepo;

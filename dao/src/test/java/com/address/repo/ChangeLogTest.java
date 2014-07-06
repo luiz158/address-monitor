@@ -17,7 +17,7 @@ import static org.junit.Assert.assertThat;
  * User: jules
  * Date: 7/6/14
  */
-public class ChangeLogTest extends AbstractRepositoryDaoTest {
+public class ChangeLogTest extends AbstractRepositoryDaoTestCase {
     @Autowired @Qualifier("changeLogRepo")
     private ChangeLogRepository changeLogRepo;
 
