@@ -27,7 +27,7 @@ import static org.junit.Assert.assertThat;
         "classpath:spring/app-service-config.xml",
         "classpath:spring/test-db-config.xml"})
 @Transactional
-public class AddressServiceImplTest {
+public class AddressLoggerTest {
 
     Logger logger = LoggerFactory.getLogger("com.address");
 
